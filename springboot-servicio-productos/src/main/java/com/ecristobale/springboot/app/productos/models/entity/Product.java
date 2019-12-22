@@ -1,6 +1,7 @@
 package com.ecristobale.springboot.app.productos.models.entity;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -13,7 +14,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-@Table(name = "productos")
+@Table(name = "products")
 public class Product implements Serializable {
 
 	@Id
@@ -21,7 +22,7 @@ public class Product implements Serializable {
 	private Long id;
 	
 	private String name;
-	private Double price;
+	private BigDecimal price;
 	
 	@Column(name = "create_at")
 	@Temporal(TemporalType.DATE)
@@ -39,10 +40,10 @@ public class Product implements Serializable {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Double getPrice() {
+	public BigDecimal getPrice() {
 		return price;
 	}
-	public void setPrice(Double price) {
+	public void setPrice(BigDecimal price) {
 		this.price = price;
 	}
 	public Date getCreateAt() {
