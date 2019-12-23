@@ -1,8 +1,10 @@
 package com.ecristobale.springboot.app.productos.controllers;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,15 +16,23 @@ import com.ecristobale.springboot.app.productos.models.service.IProductService;
 public class ProductController {
 
 	@Autowired
+	private Environment env;
+	
+	@Autowired
 	private IProductService productService;
 	
 	@GetMapping("/products")
 	public List<Product> listProducts(){
-		return productService.findAll();
+		return productService.findAll().stream().map(product -> {
+			product.setPort(Integer.parseInt(env.getProperty("local.server.port")));
+			return product;
+		}).collect(Collectors.toList());
 	}
 	
 	@GetMapping("/products/{id}")
 	public Product show(@PathVariable Long id) {
-		return productService.findById(id);
+		Product product = productService.findById(id);
+		product.setPort(Integer.parseInt(env.getProperty("local.server.port")));
+		return product;
 	}
 }
