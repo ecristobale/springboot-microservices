@@ -25,7 +25,7 @@ public class ProductController {
 	@Autowired
 	private IProductService productService;
 	
-	@GetMapping("/products")
+	@GetMapping("/listar")
 	public List<Product> listProducts(){
 		return productService.findAll().stream().map(product -> {
 			//product.setPort(Integer.parseInt(env.getProperty("local.server.port")));
@@ -34,7 +34,7 @@ public class ProductController {
 		}).collect(Collectors.toList());
 	}
 	
-	@GetMapping("/products/{id}")
+	@GetMapping("/ver/{id}")
 	public Product show(@PathVariable Long id) {
 		Product product = productService.findById(id);
 		//product.setPort(Integer.parseInt(env.getProperty("local.server.port")));

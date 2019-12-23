@@ -21,13 +21,13 @@ public class ItemController {
 	@Qualifier("serviceFeign")//("serviceRestTemplate")
 	private IItemService itemService;
 	
-	@GetMapping("/items")
+	@GetMapping("/listar")
 	public List<Item> listItems(){
 		return itemService.findAll();
 	}
 	
 	@HystrixCommand(fallbackMethod = "alternativeShow")
-	@GetMapping("/items/{id}/{units}")
+	@GetMapping("/ver/{id}/{units}")
 	public Item show(@PathVariable Long id, @PathVariable Integer units) {
 		return itemService.findById(id, units);
 	}
