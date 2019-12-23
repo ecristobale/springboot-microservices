@@ -13,7 +13,7 @@ import org.springframework.web.client.RestTemplate;
 import com.ecristobale.springboot.app.item.models.Item;
 import com.ecristobale.springboot.app.item.models.Product;
 
-@Service
+@Service("serviceRestTemplate")
 public class ItemServiceImpl implements IItemService {
 
 	@Autowired
@@ -22,7 +22,7 @@ public class ItemServiceImpl implements IItemService {
 	@Override
 	public List<Item> findAll() {
 		List<Product> products = Arrays.asList(clientRest.getForObject("http://localhost:8081/products", Product[].class));
-		return products.stream().map(p -> new Item(p, 1)).collect(Collectors.toList());
+		return products.stream().map(product -> new Item(product, 1)).collect(Collectors.toList());
 	}
 
 	@Override
