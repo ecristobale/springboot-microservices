@@ -35,10 +35,11 @@ public class ProductController {
 	}
 	
 	@GetMapping("/products/{id}")
-	public Product show(@PathVariable Long id) {
+	public Product show(@PathVariable Long id) throws Exception {
 		Product product = productService.findById(id);
 		//product.setPort(Integer.parseInt(env.getProperty("local.server.port")));
 		product.setPort(serverPort);
+
 		return product;
 	}
 }
