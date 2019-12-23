@@ -15,7 +15,7 @@ import com.ecristobale.springboot.app.item.models.service.IItemService;
 public class ItemController {
 
 	@Autowired
-	@Qualifier("serviceFeign")
+	@Qualifier("serviceFeign")//("serviceRestTemplate")
 	private IItemService itemService;
 	
 	@GetMapping("/items")
