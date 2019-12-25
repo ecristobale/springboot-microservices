@@ -6,19 +6,19 @@
 	},
 	"item": [
 		{
-			"name": "http://localhost:8082/items/",
+			"name": "http://localhost:8082/list/",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8082/items/",
+					"raw": "http://localhost:8082/list/",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8082",
 					"path": [
-						"items",
+						"list",
 						""
 					]
 				}
@@ -26,19 +26,19 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:8082/items/{id}/{units}",
+			"name": "http://localhost:8082/show/{id}/{units}",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8082/items/3/4",
+					"raw": "http://localhost:8082/show/3/4",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8082",
 					"path": [
-						"items",
+						"show",
 						"3",
 						"4"
 					]

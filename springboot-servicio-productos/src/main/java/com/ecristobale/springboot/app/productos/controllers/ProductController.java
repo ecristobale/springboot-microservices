@@ -6,9 +6,11 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
@@ -28,7 +30,7 @@ public class ProductController {
 	@Autowired
 	private IProductService productService;
 	
-	@GetMapping("/listar")
+	@GetMapping("/list")
 	public List<Product> listProducts(){
 		return productService.findAll().stream().map(product -> {
 			//product.setPort(Integer.parseInt(env.getProperty("local.server.port")));
@@ -37,7 +39,7 @@ public class ProductController {
 		}).collect(Collectors.toList());
 	}
 	
-	@GetMapping("/ver/{id}")
+	@GetMapping("/show/{id}")
 	public Product show(@PathVariable Long id) {
 		Product product = productService.findById(id);
 		//product.setPort(Integer.parseInt(env.getProperty("local.server.port")));
@@ -58,5 +60,18 @@ public class ProductController {
 		return productService.save(product);
 	}
 	
+	@PutMapping("/update/{id}")
+	@ResponseStatus(HttpStatus.CREATED)
+	public Product update(@RequestBody Product product, @PathVariable Long id) {
+		Product productDB = productService.findById(id);
+		productDB.setName(product.getName());
+		productDB.setPrice(product.getPrice());
+		return productService.save(productDB);
+	}
 	
+	@DeleteMapping("/delete/{id}")
+	@ResponseStatus(HttpStatus.NO_CONTENT)
+	public void delete(@PathVariable Long id) {
+		productService.deleteById(id);
+	}
 }

@@ -11,9 +11,9 @@ import com.ecristobale.springboot.app.item.models.Product;
 @FeignClient(name = "servicio-productos")
 public interface ProductRestClient {
 
-	@GetMapping("/listar")
+	@GetMapping("/list")
 	public List<Product> listProducts();
 	
-	@GetMapping("/ver/{id}")
+	@GetMapping("/show/{id}")
 	public Product show(@PathVariable Long id);
 }

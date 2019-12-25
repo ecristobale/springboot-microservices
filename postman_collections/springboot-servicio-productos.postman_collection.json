@@ -6,19 +6,19 @@
 	},
 	"item": [
 		{
-			"name": "http://localhost:8081/products/",
+			"name": "http://localhost:8081/list/ <-- PRODUCTS",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8081/products/",
+					"raw": "http://localhost:8081/list/",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8081",
 					"path": [
-						"products",
+						"list",
 						""
 					]
 				}
@@ -26,19 +26,19 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:8081/products/{id}",
+			"name": "http://localhost:8081/show/{id} <-- PRODUCTS",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8081/products/4",
+					"raw": "http://localhost:8081/show/4",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8081",
 					"path": [
-						"products",
+						"show",
 						"4"
 					]
 				}

@@ -36,7 +36,7 @@ public class ItemController {
 	@Qualifier("serviceFeign")//("serviceRestTemplate")
 	private IItemService itemService;
 	
-	@GetMapping("/listar")
+	@GetMapping("/list")
 	public List<Item> listItems(){
 		return itemService.findAll();
 	}
@@ -45,7 +45,7 @@ public class ItemController {
 	private String text;
 	
 	@HystrixCommand(fallbackMethod = "alternativeShow")
-	@GetMapping("/ver/{id}/{units}")
+	@GetMapping("/show/{id}/{units}")
 	public Item show(@PathVariable Long id, @PathVariable Integer units) {
 		return itemService.findById(id, units);
 	}
@@ -61,7 +61,7 @@ public class ItemController {
 		return item;
 	}
 	
-	@GetMapping("/obtener-config")
+	@GetMapping("/get-config")
 	public ResponseEntity<?> obtenerConfig(@Value("${server.port}") String port) {
 		
 		log.info(text);

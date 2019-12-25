@@ -66,31 +66,31 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:8085/servicio-items/obtener-config",
+			"name": "http://localhost:8085/servicio-items/get-config",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8085/obtener-config",
+					"raw": "http://localhost:8085/get-config",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8085",
 					"path": [
-						"obtener-config"
+						"get-config"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "http://localhost:8090/api/items/obtener-config",
+			"name": "http://localhost:8090/api/items/get-config",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8090/api/items/obtener-config",
+					"raw": "http://localhost:8090/api/items/get-config",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -99,7 +99,27 @@
 					"path": [
 						"api",
 						"items",
-						"obtener-config"
+						"get-config"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8005/actuator/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8005/actuator/refresh",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8005",
+					"path": [
+						"actuator",
+						"refresh"
 					]
 				}
 			},
