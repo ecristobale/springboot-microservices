@@ -26,6 +26,46 @@
 			"response": []
 		},
 		{
+			"name": "http://localhost:8888/servicio-items/dev",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8888/servicio-items/dev",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"servicio-items",
+						"dev"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8888/servicio-items/prod",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8888/servicio-items/prod",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"servicio-items",
+						"prod"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "http://localhost:8085/servicio-items/obtener-config",
 			"request": {
 				"method": "GET",
