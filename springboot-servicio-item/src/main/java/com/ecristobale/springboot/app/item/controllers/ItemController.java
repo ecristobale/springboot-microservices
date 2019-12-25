@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,6 +23,7 @@ import com.ecristobale.springboot.app.item.models.Product;
 import com.ecristobale.springboot.app.item.models.service.IItemService;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
+@RefreshScope
 @RestController
 public class ItemController {
 	
