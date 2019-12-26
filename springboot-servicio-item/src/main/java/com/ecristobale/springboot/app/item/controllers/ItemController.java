@@ -38,7 +38,7 @@ public class ItemController {
 	private Environment env;
 
 	@Autowired
-	@Qualifier("serviceRestTemplate")//("serviceFeign")
+	@Qualifier("serviceFeign")//("serviceRestTemplate")
 	private IItemService itemService;
 	
 	@GetMapping("/list")
