@@ -1,6 +1,7 @@
 package com.ecristobale.springboot.app.item.models;
 
 import java.math.BigDecimal;
+import com.ecristobale.springboot.app.commons.models.entity.Product;
 
 public class Item {
 

@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-import com.ecristobale.springboot.app.item.models.Product;
+import com.ecristobale.springboot.app.commons.models.entity.Product;
 
 @FeignClient(name = "servicio-productos")
 public interface ProductRestClient {
