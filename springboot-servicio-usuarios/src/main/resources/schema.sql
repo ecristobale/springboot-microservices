@@ -21,6 +21,6 @@ CREATE TABLE usuarios_roles(
    usuario_id BIGINT NOT NULL,
    role_id BIGINT NOT NULL,
    PRIMARY KEY (usuario_id, role_id),
-   FOREIGN KEY (role_id) references roles,
-   FOREIGN KEY (usuario_id) references usuarios
+   FOREIGN KEY (role_id) REFERENCES roles,
+   FOREIGN KEY (usuario_id) REFERENCES usuarios
 );
