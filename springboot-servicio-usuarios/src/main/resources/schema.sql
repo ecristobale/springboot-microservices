@@ -13,7 +13,7 @@ CREATE TABLE usuarios(
    apellido VARCHAR (255),
    enabled BOOLEAN,
    username VARCHAR (20) UNIQUE,
-   password VARCHAR (60) UNIQUE,
+   password VARCHAR (60),
    email VARCHAR (100) UNIQUE
 );
 
