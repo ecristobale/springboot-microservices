@@ -1,7 +1,7 @@
 INSERT INTO usuarios (username, password, enabled, nombre, apellido, email) 
 VALUES 
-('edu', '12345', 1, 'Eduardo', 'Cristobal', 'edu@ecristobale.com'),
-('admin', '12345', 1, 'John', 'Doe', 'john.doe@ecristobale.com');
+('edu', '$2a$10$B4nYD09o/ppUyfumO6x.WOm3jnRClDLdSDt81UhFWIFF1JTDGPwiO', 1, 'Eduardo', 'Cristobal', 'edu@ecristobale.com'),
+('admin', '$2a$10$IIaysJ/YIZWdLTS0tI28S.RRjLpn3tujqZ8RiyZcNCXnPy3l3kEFa', 1, 'John', 'Doe', 'john.doe@ecristobale.com');
 
 INSERT INTO roles (nombre) 
 VALUES 
