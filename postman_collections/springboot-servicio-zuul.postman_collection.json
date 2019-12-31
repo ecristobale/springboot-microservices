@@ -58,7 +58,7 @@
 					"urlencoded": [
 						{
 							"key": "username",
-							"value": "edu",
+							"value": "admin",
 							"type": "text"
 						},
 						{
@@ -177,6 +177,16 @@
 		{
 			"name": "http://localhost:8090/api/usuarios/usuarios/{id}",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJhZG1pbiIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJhcGVsbGlkbyI6IkRvZSIsImV4cCI6MTU3Nzc0OTI2MSwibm9tYnJlIjoiSm9obiIsImF1dGhvcml0aWVzIjpbIlJPTEVfQURNSU4iLCJST0xFX1VTRVIiXSwianRpIjoiMTg1ODI2MDEtNmY4YS00OGQ2LWE5MTktMWU1NTM3ZmY4ODVmIiwiZW1haWwiOiJqb2huLmRvZUBlY3Jpc3RvYmFsZS5jb20iLCJjbGllbnRfaWQiOiJmcm9udGVuZF9hcHAifQ.WMRmkZuyL-PdVmnU9RAIaWSzn3pTpBk2RsXTkJ87bNY",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"url": {
@@ -199,6 +209,16 @@
 		{
 			"name": "http://localhost:8090/api/usuarios/usuarios/{id}",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJhZG1pbiIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJhcGVsbGlkbyI6IkRvZSIsImV4cCI6MTU3Nzc0OTI2MSwibm9tYnJlIjoiSm9obiIsImF1dGhvcml0aWVzIjpbIlJPTEVfQURNSU4iLCJST0xFX1VTRVIiXSwianRpIjoiMTg1ODI2MDEtNmY4YS00OGQ2LWE5MTktMWU1NTM3ZmY4ODVmIiwiZW1haWwiOiJqb2huLmRvZUBlY3Jpc3RvYmFsZS5jb20iLCJjbGllbnRfaWQiOiJmcm9udGVuZF9hcHAifQ.WMRmkZuyL-PdVmnU9RAIaWSzn3pTpBk2RsXTkJ87bNY",
+							"type": "string"
+						}
+					]
+				},
 				"method": "DELETE",
 				"header": [],
 				"url": {
@@ -221,6 +241,16 @@
 		{
 			"name": "http://localhost:8090/api/usuarios/usuarios",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJhZG1pbiIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJhcGVsbGlkbyI6IkRvZSIsImV4cCI6MTU3Nzc0OTI2MSwibm9tYnJlIjoiSm9obiIsImF1dGhvcml0aWVzIjpbIlJPTEVfQURNSU4iLCJST0xFX1VTRVIiXSwianRpIjoiMTg1ODI2MDEtNmY4YS00OGQ2LWE5MTktMWU1NTM3ZmY4ODVmIiwiZW1haWwiOiJqb2huLmRvZUBlY3Jpc3RvYmFsZS5jb20iLCJjbGllbnRfaWQiOiJmcm9udGVuZF9hcHAifQ.WMRmkZuyL-PdVmnU9RAIaWSzn3pTpBk2RsXTkJ87bNY",
+							"type": "string"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [
 					{
@@ -256,8 +286,18 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:8090/api/usuarios/usuarios Copy",
+			"name": "http://localhost:8090/api/usuarios/usuarios/{id}",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJhZG1pbiIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJhcGVsbGlkbyI6IkRvZSIsImV4cCI6MTU3Nzc0OTI2MSwibm9tYnJlIjoiSm9obiIsImF1dGhvcml0aWVzIjpbIlJPTEVfQURNSU4iLCJST0xFX1VTRVIiXSwianRpIjoiMTg1ODI2MDEtNmY4YS00OGQ2LWE5MTktMWU1NTM3ZmY4ODVmIiwiZW1haWwiOiJqb2huLmRvZUBlY3Jpc3RvYmFsZS5jb20iLCJjbGllbnRfaWQiOiJmcm9udGVuZF9hcHAifQ.WMRmkZuyL-PdVmnU9RAIaWSzn3pTpBk2RsXTkJ87bNY",
+							"type": "string"
+						}
+					]
+				},
 				"method": "PUT",
 				"header": [
 					{
