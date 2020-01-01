@@ -14,7 +14,8 @@ CREATE TABLE usuarios(
    enabled BOOLEAN,
    username VARCHAR (20) UNIQUE,
    password VARCHAR (60),
-   email VARCHAR (100) UNIQUE
+   email VARCHAR (100) UNIQUE,
+   intentos INT
 );
 
 CREATE TABLE usuarios_roles(

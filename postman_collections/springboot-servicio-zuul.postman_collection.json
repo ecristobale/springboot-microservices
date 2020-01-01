@@ -96,7 +96,7 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:8090/api/security/oauth/token INCORRECT",
+			"name": "http://localhost:8090/api/security/oauth/token BAD user",
 			"request": {
 				"auth": {
 					"type": "basic",
@@ -127,12 +127,81 @@
 					"urlencoded": [
 						{
 							"key": "username",
-							"value": "incorrect",
+							"value": "user_incorrect",
 							"type": "text"
 						},
 						{
 							"key": "password",
 							"value": "12345",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/api/security/oauth/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"security",
+						"oauth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8090/api/security/oauth/token BAD pwd",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "frontend_app",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "12345",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
 							"type": "text"
 						},
 						{
