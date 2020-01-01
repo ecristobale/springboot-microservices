@@ -12,6 +12,7 @@ import org.springframework.stereotype.Component;
 import com.ecristobale.springboot.app.oauth.services.IUsuarioService;
 import com.ecristobale.springboot.app.usuarios.commons.models.entity.Usuario;
 
+import brave.Tracer;
 import feign.FeignException;
 
 @Component
@@ -21,6 +22,9 @@ public class AuthenticationSuccessErrorHandler implements AuthenticationEventPub
 	
 	@Autowired
 	private IUsuarioService usuarioService;
+	
+	@Autowired
+	private Tracer tracer;
 	
 	@Override
 	public void publishAuthenticationSuccess(Authentication authentication) {
@@ -44,6 +48,10 @@ public class AuthenticationSuccessErrorHandler implements AuthenticationEventPub
 		System.out.println(message);
 		
 		try {
+			
+			StringBuilder errors = new StringBuilder();
+			errors.append(message);
+			
 			Usuario usuario = usuarioService.findByUsername(authentication.getName());
 			if(usuario.getIntentos() == null) {
 				usuario.setIntentos(0);
@@ -53,12 +61,17 @@ public class AuthenticationSuccessErrorHandler implements AuthenticationEventPub
 			usuario.setIntentos(usuario.getIntentos() + 1);
 			log.info("Login failed, total attemps: " + usuario.getIntentos());
 			
+			errors.append(" - Login failed, total attemps: " + usuario.getIntentos());
 			
 			if(usuario.getIntentos() >= 3) {
-				log.error(String.format("User %s disabled for 3 attemps made of incorrect login", usuario.getUsername()));
+				String maxAttempts = String.format("User %s disabled for 3 attemps made of incorrect login", usuario.getUsername());
+				log.error(maxAttempts);
+				errors.append(" - " + maxAttempts);
 				usuario.setEnabled(false);
 			}
 			usuarioService.update(usuario, usuario.getId());
+			
+			tracer.currentSpan().tag("error.message", errors.toString());
 		} catch (FeignException e) {
 			log.error(String.format("Username %s doesn't exist in the system", authentication.getName()));
 		}
