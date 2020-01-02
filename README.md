@@ -14,7 +14,7 @@ Microservices using:
 - Spring Cloud Config
 - Hystrix
 - Zipkin (with Spring Cloud Sleuth)
-- Spring Data REST (with HATEOAS)
+- Spring Data REST (HATEOAS used)
 - Java 8
 
 
@@ -27,4 +27,5 @@ Microservices using:
 - Rest Template
 - H2 database
 - Java 8
+- Spring HATEOAS
 
