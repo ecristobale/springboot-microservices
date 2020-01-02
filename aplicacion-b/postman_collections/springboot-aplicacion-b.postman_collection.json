@@ -30,7 +30,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8001/students/School1",
+					"raw": "http://localhost:8001/students/school/School1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -38,6 +38,7 @@
 					"port": "8001",
 					"path": [
 						"students",
+						"school",
 						"School1"
 					]
 				}

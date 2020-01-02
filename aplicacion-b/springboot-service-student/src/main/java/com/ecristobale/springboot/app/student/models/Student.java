@@ -7,13 +7,19 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.hateoas.ResourceSupport;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "students")
-public class Student {
+public class Student extends ResourceSupport {
 
 	@Id
+	@JsonIgnore
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	@Column(name = "id")
+	private Long studentId;
 	private String name;
 	
 	@Column(name="classname")
@@ -22,11 +28,11 @@ public class Student {
 	@Column(name="schoolname")
 	private String schoolName;
 	
-	public Long getId() {
-		return id;
+	public Long getStudentId() {
+		return studentId;
 	}
-	public void setId(Long id) {
-		this.id = id;
+	public void setStudentId(Long studentId) {
+		this.studentId = studentId;
 	}
 	public String getName() {
 		return name;
