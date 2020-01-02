@@ -1,0 +1,69 @@
+{
+	"info": {
+		"_postman_id": "b1d7dfbf-967c-4f78-85f6-5c91bc88025b",
+		"name": "springboot-aplicacion-b",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8001/students",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8001/students",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"students"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8001/students/{schoolname}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8001/students/School1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"students",
+						"School1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8002/schoolDetails/{schoolname}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8002/schoolDetails/School1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8002",
+					"path": [
+						"schoolDetails",
+						"School1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
