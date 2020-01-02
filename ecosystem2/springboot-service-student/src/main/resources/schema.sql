@@ -1,0 +1,8 @@
+DROP TABLE IF EXISTS students;
+
+CREATE TABLE students(
+   id BIGINT AUTO_INCREMENT PRIMARY KEY,
+   name VARCHAR (250) NOT NULL,
+   classname VARCHAR (250) NOT NULL,
+   schoolname VARCHAR (250) NOT NULL
+);
